@@ -8,7 +8,7 @@
  * To make sure that the row/column entries will suppoert the number of keys defined (row * col >= kumber of keys).
  * 
  * One the keyboard is defined, a call to activateKeyboard will display the keyboard and return a string containing the
- * resulting input.
+ * resulting input. A keyboard only needs to be created once, but can be activated many times.
 */
 
 #define EntrySize 40  // height of entry box in pixels
@@ -151,8 +151,9 @@ KEYBOARD_CLASS::KEYBOARD_CLASS(TFT_CLASS *ptr,int rows,int cols,int fg,int bg,  
 
 // ACTIVATE KEYBOARD
 // public function that draws keyboard and returns result
-String KEYBOARD_CLASS::activateKeyboard(){
+String KEYBOARD_CLASS::activateKeyboard(String label){
   drawKeyboard();
+  populateEntry(label);
   return(getEntry());
 }
 

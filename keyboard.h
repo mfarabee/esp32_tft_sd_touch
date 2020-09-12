@@ -33,7 +33,7 @@ class KEYBOARD_CLASS{
         void drawKeyboard();
   public:
     KEYBOARD_CLASS(TFT_CLASS *ptr,int rows,int cols, int fg, int bg, char *screenA,  char *screenB, char *screenC);
-    String activateKeyboard();
+    String activateKeyboard(String label);
 };
 
 #endif
