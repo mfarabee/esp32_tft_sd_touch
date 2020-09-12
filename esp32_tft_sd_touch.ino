@@ -68,11 +68,11 @@ void drawIt() {
 
 
 void setup() {
-  File root;
+  File root; // Needed for SD card
 
   String result="";
   Serial.begin(115200);
-  Tft= new TFT_CLASS(SD_ENABLE,1); // Set  SD card=off/on  and initial rotation to 1
+  Tft= new TFT_CLASS(SD_ENABLE,SCREEN_ROTATION); // Set  SD card=off/on  and initial rotation
   touch=Tft->getTouchPtr();  // touch pointer may not be needed at this level, but is accesible.
   
   // Tft->calibrate(); // un-comment to calibrate touch
@@ -94,8 +94,5 @@ void setup() {
 
 
 void loop() {
-
-  // Sample drawing program
-  drawIt();
-
+  drawIt();  // Sample drawing program
 }
